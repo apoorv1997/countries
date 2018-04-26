@@ -6,7 +6,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-country',
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.css'],
-  providers: [Location]
 })
 export class CountryComponent implements OnInit {
   public allCountry = [];
@@ -38,7 +37,6 @@ export class CountryComponent implements OnInit {
     const cntry = [];
     // tslint:disable-next-line:prefer-const
     for ( let c of this.allCountry) {
-  
     if (c.currencies[0].name === Currency) {
       cntry.push(c);
     }

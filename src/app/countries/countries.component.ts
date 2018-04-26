@@ -8,9 +8,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-countries',
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.css'],
-  providers: [Location]
 })
 export class CountriesComponent implements OnInit {
+  // tslint:disable-next-line:no-inferrable-types
+  p: number = 1;
   public allCountries = [];
   public countries = [];
   // tslint:disable-next-line:max-line-length
@@ -41,8 +42,10 @@ export class CountriesComponent implements OnInit {
   }
   public filter(Currency): any {
 
+  // tslint:disable-next-line:prefer-const
   let temp = this.countries;
   const cntry = [];
+  // tslint:disable-next-line:prefer-const
   for ( let c of this.countries) {
 
   if (c.currencies[0].name === Currency) {
@@ -53,8 +56,10 @@ this.countries = cntry;
 }
 public filterLang(Language): any {
 
+  // tslint:disable-next-line:prefer-const
   let temp = this.countries;
   const cntry = [];
+  // tslint:disable-next-line:prefer-const
   for ( let c of this.countries) {
 
   if (c.languages[0].name === Language) {

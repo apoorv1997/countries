@@ -6,6 +6,8 @@ import { ViewHttpService } from '../view-http.service';
   styleUrls: ['./region.component.css']
 })
 export class RegionComponent implements OnInit {
+  // tslint:disable-next-line:no-inferrable-types
+  p: number = 1;
   public allRegions = [];
   public eachRegions = [];
   constructor(public viewService: ViewHttpService) {
