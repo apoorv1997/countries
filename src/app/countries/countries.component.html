@@ -1,0 +1,19 @@
+<div class="col-lg-12">
+    <div>
+        <div class="col-md-4" *ngFor="let country of countries | paginate : { itemsPerPage: 24, currentPage: p }">
+            <div class="profile-card text-center">
+                <div class="profile-info">
+                    <h3 class="hvr-underline-from-center">{{country.region}} </h3>
+                    <div>Country name:- <a [routerLink]="['/country',country.name]">{{country.name}}</a></div>
+                    <div>Country Capital:- <a>{{country.capital}}</a></div>
+                    <div>Country Subregion:- <a>{{country.subregion}}</a></div>
+                    <div>Country Timezone:- <a>{{country.timezones[0]}}</a></div>
+                    <div>Country currency:- <a (click)="filter(country.currencies[0].name)">{{country.currencies[0].name}}</a></div>
+                    <div>Country Language:- <a a (click)="filterLang(country.languages[0].name)">{{country.languages[0].name}}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<pagination-controls (pageChange)="p = $event "></pagination-controls>
